@@ -27,6 +27,12 @@ public class CustomList : List<long>
         _values.Add(value);
     }
 
+    new public void Insert(int index, long value)
+    {
+        base.Insert(index, value);
+        _values.Add(value);
+    }
+
     public bool IsAllZeroes() => _values.Count == 1 && this[0] == 0;
 
     public override string ToString()

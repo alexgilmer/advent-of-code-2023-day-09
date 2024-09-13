@@ -45,12 +45,12 @@ internal class Program
         while (layers.Count > 0)
         {
             CustomList layer = layers.Pop();
-            long increment = layer.Last();
+            long increment = layer[0];
             if (layers.Count == 0)
                 return increment;
 
             CustomList nextList = layers.Peek();
-            nextList.Add(nextList.Last() + increment);
+            nextList.Insert(0, nextList[0] - increment);
         }
 
         throw new Exception("This shouldn't happen");
